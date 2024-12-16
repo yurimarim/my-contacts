@@ -25,13 +25,13 @@ const messageOut = keyframes`
 `;
 
 const containerVariants = {
-  default: css`
+	default: css`
     background: ${({ theme }) => theme.colors.primary.main};
   `,
-  success: css`
+	success: css`
     background: ${({ theme }) => theme.colors.success.main};
   `,
-  danger: css`
+	danger: css`
     background: ${({ theme }) => theme.colors.danger.main};
   `,
 };
@@ -47,7 +47,7 @@ export const Container = styled.div`
   cursor: pointer;
   animation: ${messageIn} 0.3s;
 
-  ${({ $isLeaving }) => $isLeaving && css`animation: ${messageOut} 0.2s;`}
+  ${({ $isLeaving }) => $isLeaving && css`animation: ${messageOut} 0.2s forwards;`}
 
   ${({ type }) => containerVariants[type] || containerVariants.default}
 
